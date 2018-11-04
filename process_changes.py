@@ -37,25 +37,25 @@ def save_commits(commits, any_file):
 				str(commit['number_of_lines']) + ',' + ' '.join(commit['comment']) + '\n')
     my_file.close()
 
+if __name__ == '__main__':
+   # open the file - and read all of the lines.
+   changes_file = 'changes_python.log'
+   data = read_file(changes_file)
+   print (len(data))
+   commits = get_commits(data)
+   print (len(commits))
+   print (commits[0])
+   print (commits[0]['author'])
+   save_commits(commits, 'changes.csv')
+  
 # =============================================================================
-# if __name__ == '__main__':
-#     # open the file - and read all of the lines.
-#     changes_file = 'changes_python.log'
-#     data = read_file(changes_file)
-#     print (len(data))
-#     commits = get_commits(data)
-#     print (len(commits))
-#     print (commits[0])
-#     print (commits[0]['author'])
-#     save_commits(commits, 'changes.csv')
+# data = read_file("changes_python.txt")
+# 
+# commits = get_commits(data)
+# 
+# save_commits(commits, "output.csv")
+# 
 # =============================================================================
-    
-data = read_file("changes_python.txt")
-
-commits = get_commits(data)
-
-save_commits(commits, "output.csv")
-
     
     
     
